@@ -1,0 +1,12 @@
+version: "0.1.0"
+services:
+  guixsd-proxy:
+    image: squid
+    container_name: guixsd-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./cache:/var/cache/squid
+      - ./config:/etc/squid
+      - ./logs:/var/log/squid
